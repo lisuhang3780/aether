@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AETHER — 经得起时间的日常之物</title>
+  <meta name="description" content="AETHER 是一个极简、诚实、为长久使用而生的日用器物商店。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ 顶部导航 ============ -->
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="#" class="brand">AETHER</a>
+      <nav class="nav__links">
+        <a href="#shop">商店</a>
+        <a href="#collections">系列</a>
+        <a href="#story">关于</a>
+        <a href="#journal">日志</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="icon-btn" aria-label="搜索">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2" stroke-linecap="round"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="账户">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M5 19c0-3.3 3.1-5.5 7-5.5s7 2.2 7 5.5" stroke-linecap="round"/></svg>
+        </button>
+        <button class="icon-btn" id="cartBtn" aria-label="购物车" style="position:relative">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 7h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 7Z" stroke-linejoin="round"/><path d="M9 7a3 3 0 0 1 6 0" stroke-linecap="round"/></svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+        <a href="#shop" class="btn btn--primary" style="margin-left:6px">立即选购</a>
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="菜单">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 移动端抽屉 -->
+  <div class="drawer" id="drawer">
+    <a href="#shop">商店</a>
+    <a href="#collections">系列</a>
+    <a href="#story">关于</a>
+    <a href="#journal">日志</a>
+    <a href="#shop" class="btn btn--primary btn--block" style="margin-top:16px">立即选购</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__glow"></div>
+    <div class="container hero__inner">
+      <p class="eyebrow reveal">2026 春夏系列 · 现已上架</p>
+      <h1 class="display reveal">安静，却恰到好处。</h1>
+      <p class="lead reveal">AETHER 是一个为长久使用而生的日用器物商店——极简、诚实，经得起每一天的生活。</p>
+      <div class="hero__cta reveal">
+        <a href="#shop" class="btn btn--primary">选购全系列</a>
+        <a href="#story" class="btn btn--outline">了解我们的故事</a>
+      </div>
+
+      <!-- 毛玻璃产品窗（仿 Attio window shell）-->
+      <div class="window-shell reveal">
+        <div class="window-shell__bar"><span></span><span></span><span></span></div>
+        <div class="window-shell__body">
+          <img src="assets/img/hero-livingroom.jpg"
+               data-fb="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=80"
+               alt="极简客厅一隅" loading="lazy" decoding="async"
+               onerror="if(this.dataset.fb&&!this.dataset.tried){this.dataset.tried='1';this.src=this.dataset.fb;}else{this.style.display='none';this.parentElement.classList.add('img-fallback');}" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 媒体背书跑马灯 ============ -->
+  <section class="marquee">
+    <p class="marquee__label eyebrow">被这些媒体与买手店推荐</p>
+    <div class="marquee__track" id="marquee">
+      <span class="marquee__item">KINFOLK</span>
+      <span class="marquee__item">MONOCLE</span>
+      <span class="marquee__item">WALLPAPER*</span>
+      <span class="marquee__item">DEZEEN</span>
+      <span class="marquee__item">VOGUE</span>
+      <span class="marquee__item">CEREAL</span>
+      <!-- 复制一份用于无缝循环 -->
+      <span class="marquee__item">KINFOLK</span>
+      <span class="marquee__item">MONOCLE</span>
+      <span class="marquee__item">WALLPAPER*</span>
+      <span class="marquee__item">DEZEEN</span>
+      <span class="marquee__item">VOGUE</span>
+      <span class="marquee__item">CEREAL</span>
+    </div>
+  </section>
+
+  <!-- ============ 精选商品 ============ -->
+  <section class="section" id="shop">
+    <div class="container">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">本周精选</span>
+        <h2 class="h2">为日常挑选的四件好物</h2>
+        <p class="lead">每一件都经过反复打样，只为在你手里用很多年。</p>
+      </div>
+
+      <div class="products">
+        <!-- 商品卡 -->
+        <article class="card reveal">
+          <div class="card__media">
+            <img src="assets/img/prod-watch.jpg"
+                 data-fb="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="极简腕表"
+                 loading="lazy" decoding="async"
+                 onerror="if(this.dataset.fb&&!this.dataset.tried){this.dataset.tried='1';this.src=this.dataset.fb;}else{this.style.display='none';this.parentElement.classList.add('img-fallback');}" />
+            <button class="card__add" data-name="极简腕表">加入购物车</button>
+          </div>
+          <div class="card__info">
+            <div>
+              <div class="card__name">极简腕表</div>
+              <div class="card__cat">配饰</div>
+            </div>
+            <div class="card__price">¥1,280</div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__media">
+            <img src="assets/img/prod-headphones.jpg"
+                 data-fb="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="头戴式耳机"
+                 loading="lazy" decoding="async"
+                 onerror="if(this.dataset.fb&&!this.dataset.tried){this.dataset.tried='1';this.src=this.dataset.fb;}else{this.style.display='none';this.parentElement.classList.add('img-fallback');}" />
+            <button class="card__add" data-name="声学耳机">加入购物车</button>
+          </div>
+          <div class="card__info">
+            <div>
+              <div class="card__name">声学耳机</div>
+              <div class="card__cat">数码</div>
+            </div>
+            <div class="card__price">¥1,890</div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__media">
+            <img src="assets/img/prod-chair.jpg"
+                 data-fb="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=800&q=80" alt="单椅"
+                 loading="lazy" decoding="async"
+                 onerror="if(this.dataset.fb&&!this.dataset.tried){this.dataset.tried='1';this.src=this.dataset.fb;}else{this.style.display='none';this.parentElement.classList.add('img-fallback');}" />
+            <button class="card__add" data-name="休憩单椅">加入购物车</button>
+          </div>
+          <div class="card__info">
+            <div>
+              <div class="card__name">休憩单椅</div>
+              <div class="card__cat">家居</div>
+            </div>
+            <div class="card__price">¥3,460</div>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__media">
+            <img src="assets/img/prod-fragrance.jpg"
+                 data-fb="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=80" alt="香氛"
+                 loading="lazy" decoding="async"
+                 onerror="if(this.dataset.fb&&!this.dataset.tried){this.dataset.tried='1';this.src=this.dataset.fb;}else{this.style.display='none';this.parentElement.classList.add('img-fallback');}" />
+            <button class="card__add" data-name="木质香氛">加入购物车</button>
+          </div>
+          <div class="card__info">
+            <div>
+              <div class="card__name">木质香氛</div>
+              <div class="card__cat">气味</div>
+            </div>
+            <div class="card__price">¥560</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 品牌故事（图文分栏）============ -->
+  <section class="section section--alt" id="story">
+    <div class="container split">
+      <div class="split__media reveal">
+        <img src="assets/img/story-studio.jpg"
+             data-fb="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1100&q=80" alt="工作室"
+             loading="lazy" decoding="async"
+             onerror="if(this.dataset.fb&&!this.dataset.tried){this.dataset.tried='1';this.src=this.dataset.fb;}else{this.style.display='none';this.parentElement.classList.add('img-fallback');}" />
+      </div>
+      <div class="split__body reveal">
+        <span class="eyebrow">我们的坚持</span>
+        <h2 class="h2">少一点，但更好一点。</h2>
+        <p class="lead">我们相信好的设计应当隐于生活之后。AETHER 与小型工坊合作，用诚实的材料和可修复的结构，做出能用很久的东西。</p>
+        <ul class="feature-list">
+          <li><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4.5 4.5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 真实材料，拒绝廉价涂层</li>
+          <li><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4.5 4.5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 可维修、可换新部件</li>
+          <li><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4.5 4.5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 碳中性配送，简约包装</li>
+        </ul>
+        <a href="#collections" class="btn btn--outline" style="margin-top:32px">查看全部系列</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 分类 ============ -->
+  <section class="section" id="collections">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">按场景选购</span>
+        <h2 class="h2">四大系列</h2>
+      </div>
+      <div class="cats">
+        <a href="#shop" class="cat reveal">
+          <img src="assets/img/cat-home.jpg"
+               data-fb="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=800&q=80" alt="家居"
+               loading="lazy" decoding="async"
+               onerror="if(this.dataset.fb&&!this.dataset.tried){this.dataset.tried='1';this.src=this.dataset.fb;}else{this.style.display='none';this.parentElement.classList.add('img-fallback');}" />
+          <div class="cat__label"><h3>家居</h3><span>器物与软装</span></div>
+        </a>
+        <a href="#shop" class="cat reveal">
+          <img src="assets/img/cat-wear.jpg"
+               data-fb="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80" alt="佩戴"
+               loading="lazy" decoding="async"
+               onerror="if(this.dataset.fb&&!this.dataset.tried){this.dataset.tried='1';this.src=this.dataset.fb;}else{this.style.display='none';this.parentElement.classList.add('img-fallback');}" />
+          <div class="cat__label"><h3>佩戴</h3><span>配饰与眼镜</span></div>
+        </a>
+        <a href="#shop" class="cat reveal">
+          <img src="assets/img/cat-bag.jpg"
+               data-fb="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80" alt="携带"
+               loading="lazy" decoding="async"
+               onerror="if(this.dataset.fb&&!this.dataset.tried){this.dataset.tried='1';this.src=this.dataset.fb;}else{this.style.display='none';this.parentElement.classList.add('img-fallback');}" />
+          <div class="cat__label"><h3>携带</h3><span>包袋与出行</span></div>
+        </a>
+        <a href="#shop" class="cat reveal">
+          <img src="assets/img/cat-light.jpg"
+               data-fb="https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80" alt="光线"
+               loading="lazy" decoding="async"
+               onerror="if(this.dataset.fb&&!this.dataset.tried){this.dataset.tried='1';this.src=this.dataset.fb;}else{this.style.display='none';this.parentElement.classList.add('img-fallback');}" />
+          <div class="cat__label"><h3>光线</h3><span>灯具与氛围</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 数据条 ============ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="stats">
+        <div class="stat reveal"><div class="stat__num">12k+</div><div class="stat__label">满意顾客</div></div>
+        <div class="stat reveal"><div class="stat__num">4.9★</div><div class="stat__label">平均评分</div></div>
+        <div class="stat reveal"><div class="stat__num">40</div><div class="stat__label">送达国家</div></div>
+        <div class="stat reveal"><div class="stat__num">100%</div><div class="stat__label">碳中和配送</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 口碑 ============ -->
+  <section class="section" id="journal">
+    <div class="container">
+      <div class="quote reveal">
+        <blockquote>“AETHER 的东西不抢戏。它们安静地待在那儿，却让每一天都更顺手了一点。”</blockquote>
+        <div class="quote__by">
+          <img class="quote__avatar" src="assets/img/avatar-lin.jpg"
+               data-fb="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="林知微"
+               loading="lazy" decoding="async"
+               onerror="if(this.dataset.fb&&!this.dataset.tried){this.dataset.tried='1';this.src=this.dataset.fb;}else{this.style.display='none';this.nextElementSibling.style.display='grid';}" />
+          <span class="quote__avatar quote__avatar--fallback" style="display:none" aria-hidden="true">林</span>
+          <div><b>林知微</b><br><span>室内设计师 / 上海</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 订阅 CTA ============ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="cta reveal">
+        <h2 class="h2">先一步，收到新系列。</h2>
+        <p class="lead">每月一封，只聊好物与设计，绝不打扰。</p>
+        <form class="subscribe" id="subscribeForm">
+          <input type="email" placeholder="你的邮箱地址" required aria-label="邮箱" />
+          <button type="submit" class="btn btn--primary">订阅</button>
+        </form>
+        <div class="msg" id="subMsg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 页脚 ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#" class="brand">AETHER</a>
+          <p>经得起时间的日常之物。少一点，但更好一点。</p>
+        </div>
+        <div class="footer__col">
+          <h4>商店</h4>
+          <a href="#shop">全部商品</a>
+          <a href="#collections">系列</a>
+          <a href="#">新品</a>
+          <a href="#">礼品卡</a>
+        </div>
+        <div class="footer__col">
+          <h4>关于</h4>
+          <a href="#story">我们的故事</a>
+          <a href="#">材料与工艺</a>
+          <a href="#">可持续</a>
+          <a href="#">加入我们</a>
+        </div>
+        <div class="footer__col">
+          <h4>帮助</h4>
+          <a href="#">配送与退换</a>
+          <a href="#">维修服务</a>
+          <a href="#">常见问题</a>
+          <a href="#">联系我们</a>
+        </div>
+        <div class="footer__col">
+          <h4>关注</h4>
+          <a href="#">Instagram</a>
+          <a href="#">小红书</a>
+          <a href="#">微信公众号</a>
+          <a href="#">微博</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 AETHER. 保留所有权利。</span>
+        <span>隐私政策 · 服务条款</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
